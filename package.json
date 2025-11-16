@@ -1,14 +1,21 @@
 {
-  "name": "alphacell",
+  "name": "caps-lock",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gsap": "^3.13.0",
+    "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
+    "swiper": "^11.2.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
   }
 }

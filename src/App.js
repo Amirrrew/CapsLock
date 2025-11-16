@@ -1,24 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import routes from './router';
+import { useRoutes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import { useEffect, useState } from 'react';
+
 
 function App() {
+  let Router = useRoutes(routes);
+  const [Loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+
+    if (document.readyState === "complete") {
+      setLoading(false);
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {Loading ? (
+        <div className='flex justify-center mt-32'>
+          <div>
+            <div className='loader'></div>
+            <div className='text-center mt-5'>
+              Loading ...
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className='relative' style={{animation: "openApp 1s" ,zIndex: "100"}}>
+            <Navbar></Navbar>
+          </div>
+          <div className='flex justify-end relative' style={{animation: "openApp 2s"}}>
+            <div id='display-page' className='w-[100%] display-page transition-all'>
+              {Router}
+            </div>
+            <Sidebar></Sidebar>
+          </div>
+        </div>
+      )}
+
+    </>
   );
 }
 
