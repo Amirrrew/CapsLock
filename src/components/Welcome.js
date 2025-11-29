@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TitleBar from './TitleBar'
 import { useEffect } from 'react';
-import { ScrollToPortDesktop } from '../ScrollFunc';
+import { ScrollToAboutDesktop, ScrollToContactDesktop, ScrollToPortDesktop } from '../ScrollFunc';
 import SplitText from "./SplitText";
 // --------------------------------------
 import { TbBrandCSharp } from "react-icons/tb";
@@ -102,7 +102,7 @@ export default function Welcome() {
             </div>
 
             <div className='flex gap-2 mt-2' style={window.innerWidth > 1000 ? {justifyContent: "start"} : {justifyContent: "center"}}>
-              <button style={window.innerWidth < 1000 ? {fontSize: "12px"} : null} className='btn-light'>Who am I? <i className='fa fa-arrow-right transition-all'></i></button>
+              <button style={window.innerWidth < 1000 ? {fontSize: "12px"} : null} onClick={ScrollToAboutDesktop} className='btn-light'>Who am I? <i className='fa fa-arrow-right transition-all'></i></button>
               <button style={window.innerWidth < 1000 ? {fontSize: "12px"} : null} onClick={ScrollToPortDesktop} className='btn-dark'>Who I've done <i className='fa fa-arrow-right transition-all'></i></button>
             </div>
           </div>

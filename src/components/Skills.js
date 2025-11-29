@@ -284,7 +284,7 @@ export default function Skills() {
 
                 <div className='flex justify-end'>
                     <div className=''>
-                        <i style={{ transform: `rotate(${rotation}deg)` }} className='fa-brands fa-js fa-5x mx-20 grid-icon'></i>
+                        <i style={window.innerWidth > 1000 ? { transform: `rotate(${rotation}deg)` } : {animation: "IconRotate 10s linear" ,animationIterationCount: "infinite"}} className='fa-brands fa-js fa-5x mx-20 grid-icon'></i>
                     </div>
                 </div>
 
@@ -296,16 +296,16 @@ export default function Skills() {
 
                 <div className='flex justify-end mt-[-200px] mx-32 '>
                     <div className='mt-[-100px]' style={{ zIndex: -1 }}>
-                        <i style={{ transform: `rotate(${rotation}deg)` }} className='fa-brands fa-css3 fa-5x mx-20 grid-icon'></i>
+                        <i style={window.innerWidth > 1000 ? { transform: `rotate(${rotation}deg)` } : {animation: "IconRotate 10s linear" ,animationIterationCount: "infinite"}} className='fa-brands fa-css3 fa-5x mx-20 grid-icon'></i>
                     </div>
                     <div className='ml-[350px]' style={{ zIndex: 1 }} id='py'>
-                        <i style={{ transform: `rotate(${rotation}deg)` }} className='fa-brands fa-python fa-5x mx-20 grid-icon'></i>
+                        <i style={window.innerWidth > 1000 ? { transform: `rotate(${rotation}deg)` } : {animation: "IconRotate 10s linear" ,animationIterationCount: "infinite"}} className='fa-brands fa-python fa-5x mx-20 grid-icon'></i>
                     </div>
                 </div>
 
                 <div className='flex justify-start mt-32'>
                     <div className=''>
-                        <i style={{ transform: `rotate(${rotation}deg)` }} className='fa-brands fa-react fa-5x mx-20 grid-icon'></i>
+                        <i style={window.innerWidth > 1000 ? { transform: `rotate(${rotation}deg)` } : {animation: "IconRotate 10s linear" ,animationIterationCount: "infinite"}} className='fa-brands fa-react fa-5x mx-20 grid-icon'></i>
                     </div>
                 </div>
 
@@ -327,7 +327,6 @@ export default function Skills() {
 
                 <div className='flex justify-center'>
                     <div className=''>
-                        <i style={{ transform: `rotate(${rotation}deg)` }} className='fa-brands fa-html5 fa-5x mx-[-200px] grid-icon'></i>
                     </div>
                 </div>
 

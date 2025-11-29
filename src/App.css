@@ -64,6 +64,15 @@
   }
 }
 
+@keyframes IconRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 .loader {
@@ -154,6 +163,7 @@
   --icon-color: #919191;
   --spot: #0e0e0e;
   --color7: #0e0e0e92;
+  --color8: #0b0b0b92;
 }
 
 html {
@@ -369,6 +379,11 @@ body {
   #lang-icon {
     width: 100px;
     margin-left: -100px;
+  }
+
+  #copyright {
+    margin: 0 40px;
+    padding-bottom: 20px;
   }
 }
 
@@ -1205,4 +1220,14 @@ body {
   100% {
     margin-left: 8rem;
   }
+}
+
+.contact-iconbox {
+  width: 40px;
+  height: 40px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 200ms;
+  box-shadow: 1px 1px 100px #fff;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollFix from '../ScrollFix'
-import { ScrollToPortDesktop, ScrollToSkillsDesktop, ScrolltoTop ,ScrollToAboutDesktop } from '../ScrollFunc'
+import { ScrollToPortDesktop, ScrollToSkillsDesktop, ScrolltoTop ,ScrollToAboutDesktop ,ScrollToContactDesktop} from '../ScrollFunc'
 
 export default function Sidebar() {
 
@@ -22,11 +22,11 @@ export default function Sidebar() {
 
  return (
     <div id='sidebar' className='sidebar'>
-        <SidebarBtn icon={"fa fa-home"} alt={"HOME"} title={"Home"} scrollFunc={ScrolltoTop}></SidebarBtn>
+        <SidebarBtn icon={"fa fa-arrow-up"} alt={"TOP"} title={"Top"} scrollFunc={ScrolltoTop}></SidebarBtn>
         <SidebarBtn icon={"fa fa-code"} alt={"SKILLS"} title={"Skills"} scrollFunc={ScrollToSkillsDesktop}></SidebarBtn>
         <SidebarBtn icon={"fa fa-window-maximize"} alt={"PORTFOLIOS"} title={"Portfolio"} scrollFunc={ScrollToPortDesktop}></SidebarBtn>
         <SidebarBtn icon={"fa fa-user"} alt={"ABOUT"} title={"About me"} scrollFunc={ScrollToAboutDesktop}></SidebarBtn>
-        <SidebarBtn icon={"fa fa-phone"} alt={"CONTACT"} title={"Contact"}></SidebarBtn>
+        <SidebarBtn icon={"fa fa-phone"} alt={"CONTACT"} title={"Contact"} scrollFunc={ScrollToContactDesktop}></SidebarBtn>
         <button onClick={CloseNav} className='closeNavbtn'><i className='fa fa-close'></i></button>
     </div>
   )

@@ -148,7 +148,7 @@ export default function About() {
 
 
         <div className='flex justify-center mt-[-1px]'>
-          <div className='border border-[var(--border-color)] w-[85%]'>
+          <div className='border-l border-r border-[var(--border-color)] w-[85%]'>
 
             <div className='w-[100%] flex justify-between'>
               <div className='text-xl pt-4 px-5'>

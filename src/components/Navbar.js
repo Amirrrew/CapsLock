@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ScrollFix from '../ScrollFix'
-import { ScrollToSkillsDesktop, ScrolltoTop, ScrollToPortDesktop, ScrollToAboutDesktop } from '../ScrollFunc'
+import { ScrollToSkillsDesktop, ScrolltoTop, ScrollToPortDesktop, ScrollToAboutDesktop, ScrollToContactDesktop } from '../ScrollFunc'
 
 
 
@@ -175,6 +175,19 @@ export default function Navbar() {
 
             }
         }
+        if (window.innerWidth > 1000) {
+            if (document.body.scrolltop > 6631 || document.documentElement.scrollTop > 6631) {
+                document.getElementById('con').style = 'filter: Blur(0px);'
+                document.getElementById('prof-card').style.top = "-100px"
+            }
+        }
+        else {
+            if (document.body.scrolltop > 7409 || document.documentElement.scrollTop > 7409) {
+                document.getElementById('con').style = 'filter: Blur(0px);'
+                document.getElementById('prof-card').style.top = "-100px"
+            }
+        }
+
 
         console.log(document.documentElement.scrollTop)
     }
@@ -189,11 +202,10 @@ export default function Navbar() {
                 </button>
             </div>
             <div className='navRow flex justify-start gap-8 mx-10 mt-2'>
-                <NavBtnTemplate title={'HOME'} scrfunc={ScrolltoTop}></NavBtnTemplate>
                 <NavBtnTemplate title={'SKILLS'} scrfunc={ScrollToSkillsDesktop}></NavBtnTemplate>
                 <NavBtnTemplate title={'PORTFOLIOS'} scrfunc={ScrollToPortDesktop}></NavBtnTemplate>
                 <NavBtnTemplate title={'ABOUT-ME'} scrfunc={ScrollToAboutDesktop}></NavBtnTemplate>
-                <NavBtnTemplate title={'CONTACT'}></NavBtnTemplate>
+                <NavBtnTemplate title={'CONTACT'} scrfunc={ScrollToContactDesktop}></NavBtnTemplate>
             </div>
         </div>
     )

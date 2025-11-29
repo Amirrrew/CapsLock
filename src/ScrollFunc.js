@@ -48,4 +48,14 @@ let ScrollToAboutDesktop = () => {
     }
 }
 
-export {ScrollToSkillsDesktop ,ScrolltoTop ,ScrollToPortDesktop ,ScrollToAboutDesktop};
+let ScrollToContactDesktop = () => {
+    if (window.innerWidth > 1000) {
+        document.documentElement.scrollTop = 6631;
+    }
+    else {
+        document.documentElement.scrollTop = 7409;
+        CloseNav();
+    }
+}
+
+export {ScrollToSkillsDesktop ,ScrolltoTop ,ScrollToPortDesktop ,ScrollToAboutDesktop ,ScrollToContactDesktop};
