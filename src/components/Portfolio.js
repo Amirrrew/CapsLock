@@ -109,11 +109,11 @@ export default function Portfolio() {
 
                 <div className='fb-switch'>
                     <button id='swfr' onClick={SwFront} className='fb-btn'>
-                        FRONT-END
+                        WEB-APPS
                     </button>
 
                     <button id='swbk' onClick={SwBack} className='fb-btn'>
-                        BACK-END
+                        DESKTOP
                     </button>
                 </div>
 

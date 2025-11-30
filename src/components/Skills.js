@@ -50,29 +50,29 @@ export default function Skills() {
     ];
 
     const presentFront = [
-        { id: 0, name: "React Js", icon: <FaReact />, pr: "60", wid: "60%" },
-        { id: 1, name: "JS", icon: <FaJs />, pr: "45", wid: "45%" },
+        { id: 0, name: "React Js", icon: <FaReact />, pr: "45", wid: "45%" },
+        { id: 1, name: "JS", icon: <FaJs />, pr: "35", wid: "35%" },
         { id: 2, name: "HTML", icon: <FaHtml5 />, pr: "100", wid: "100%" },
-        { id: 3, name: "CSS", icon: <FaCss3 />, pr: "100", wid: "100%" },
-        { id: 4, name: "Tailwind", icon: <RiTailwindCssFill />, pr: "80", wid: "80%" },
-        { id: 5, name: "Bootstrap", icon: <FaBootstrap />, pr: "60", wid: "60%" },
+        { id: 3, name: "CSS", icon: <FaCss3 />, pr: "90", wid: "90%" },
+        { id: 4, name: "Tailwind", icon: <RiTailwindCssFill />, pr: "70", wid: "70%" },
+        { id: 5, name: "Bootstrap", icon: <FaBootstrap />, pr: "50", wid: "50%" },
 
     ]
 
     const presentBack = [
-        { id: 0, name: "C# WinForm", icon: <TbBrandCSharp />, pr: "80", wid: "80%" },
-        { id: 1, name: "Django", icon: <SiDjango />, pr: "0", wid: "0%" },
-        { id: 2, name: "Python", icon: <FaPython />, pr: "25", wid: "25%" },
+        { id: 0, name: "C# WinForm", icon: <TbBrandCSharp />, pr: "65", wid: "65%" },
+        { id: 1, name: "Django", icon: <SiDjango />, pr: "10", wid: "10%" },
+        { id: 2, name: "Python", icon: <FaPython />, pr: "30", wid: "30%" },
 
     ]
 
     const presentGeneral = [
         { id: 0, name: "English", icon: <GrLanguage />, pr: "80", wid: "80%" },
-        { id: 1, name: "Git", icon: <FaGit />, pr: "55", wid: "55%" },
+        { id: 1, name: "Git", icon: <FaGit />, pr: "40", wid: "40%" },
         { id: 2, name: "Github", icon: <FaGithub />, pr: "75", wid: "75%" },
         { id: 3, name: "SQL", icon: <DiSqllite />, pr: "30", wid: "30%" },
         { id: 4, name: "SQL Server", icon: <DiMsqlServer />, pr: "30", wid: "30%" },
-        { id: 5, name: "Microsoft Office", icon: <PiMicrosoftExcelLogoFill />, pr: "90", wid: "90%" },
+        { id: 5, name: "Microsoft Office", icon: <PiMicrosoftExcelLogoFill />, pr: "70", wid: "70%" },
     ]
 
     let [front, setFront] = useState(presentFront);
