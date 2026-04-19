@@ -89,7 +89,7 @@ export default function Portfolio() {
     selectedItem != null ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "scroll";
 
     const [selectedImg, setSelectedImg] = useState(null);
-
+    
     return (
         <div className='relative opacity-0 mt-52' id='port'>
 
@@ -168,7 +168,7 @@ export default function Portfolio() {
                                 <div className='mt-3'>
 
                                     <div className='flex justify-start gap-3 mx-1 mt-5'>
-                                        <div className='w-2 rounded text-gray-300 bg-gray-300'>a</div>
+                                        <div className='w-2 rounded text-gray-300 bg-gray-300'></div>
                                         <div className='text-xl'>
                                             {item.title}
                                         </div>
@@ -225,7 +225,7 @@ export default function Portfolio() {
                                 <div className='mt-3'>
 
                                     <div className='flex justify-start gap-3 mx-1 mt-5'>
-                                        <div className='w-2 rounded text-gray-300 bg-gray-300'>a</div>
+                                        <div className='w-2 rounded text-gray-300 bg-gray-300'></div>
                                         <div className='text-xl'>
                                             {item.title}
                                         </div>

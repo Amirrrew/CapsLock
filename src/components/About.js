@@ -68,16 +68,16 @@ export default function About() {
             </div>
 
             <div className='mt-5'>
-              I'm amir nobakht ,a Mid-level developer using lots of languages like <b className='text-white'>C#</b> ,<b className='text-white'>Javascript (React Library)</b> ,and <b className='text-white'>Python</b> to develope Websites ,webapps ,Desktop Apps ,and ...
+              I'm amir nobakht ,a Mid-level developer using lots of tools like <b className='text-white'>C#</b> ,<b className='text-white'>Javascript (React)</b> ,and <b className='text-white'>Python</b> to develop Websites ,webapps ,Desktop Apps ,and ...
             </div>
             <div className='mt-5'>
-              I've got lots of experiences in doing big and small projects. doing team works and using tools different.
+              I've got experience in doing big and small projects ,doing team works and using variable tools.
             </div>
             <div className='mt-5'>
-              Skills: Designing dynamic websites using <b className='text-white'>ReactJS</b> and <b className='text-white'>Django</b>. Developing desktop apps using <b className='text-white'>C#</b> and <b className='text-white'>.Net Frameworks</b>.
+              Skills: Designing dynamic websites using <b className='text-white'>ReactJS</b>, <b className='text-white'>Django</b> and other stuff. Developing desktop apps using <b className='text-white'>C#</b> and <b className='text-white'>.Net Frameworks</b>.
             </div>
             <div>
-              Experience in working with <b className='text-white'>git</b> and <b className='text-white'>github</b> to manage version to collabrate with different companies and teams.
+              Experience in working with <b className='text-white'>git</b> and <b className='text-white'>github</b> to manage version or collabrate with different companies and teams.
             </div>
             <div>
               I live in qaemshahr ,a city located in mazandaran. I can work remotly and in-person...

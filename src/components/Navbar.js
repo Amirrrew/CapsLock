@@ -140,7 +140,7 @@ export default function Navbar() {
         }
 
         if (window.innerWidth > 1000) {
-            if (document.body.scrolltop > 5182 || document.documentElement.scrollTop > 5182) {
+            if (document.body.scrolltop > 5082 || document.documentElement.scrollTop > 5082) {
                 document.getElementById('about-box').style = 'opacity: 1; animation: opening 1s; position: relative;'
 
             }
@@ -158,7 +158,7 @@ export default function Navbar() {
             }
         }
         else {
-            if (document.body.scrolltop > 4931 || document.documentElement.scrollTop > 4931) {
+            if (document.body.scrolltop > 4631 || document.documentElement.scrollTop > 4631) {
                 document.getElementById('about-box').style = 'opacity: 1; animation: opening 1s; position: relative;'
 
             }
