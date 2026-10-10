@@ -1,11 +1,11 @@
-import Home from "./components/Home"
-import NotFound from "./pages/notFound"
+import Home from "./pages/home/home"
+import Portfolios_grid from "./pages/portfolios/portfolios_grid"
 
 
 
 let routes = [
     {path: '/' ,element: <Home/>},
-    {path: '*' ,element: <NotFound/>},
+    {path: '/portfolios' ,element: <Portfolios_grid />},
 ]
 
 export default routes

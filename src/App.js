@@ -1,55 +1,63 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import routes from './router';
-import { useRoutes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 import { useEffect, useState } from 'react';
+import { useRoutes } from 'react-router-dom';
+import './styles/main.css'
+import routes from './router';
+import Navbar from './components/navbar/navbar';
+import Page_loading from './components/loadings/Page_loading';
+import useScrollReveal from './hooks/scroll_reveal/useScrollReveal';
+import Message_toast from './components/toast/toast';
+import ToastHost from './components/toast/ToastHost';
+import { toast } from './utils/toast';
+import ScrollToTop from './utils/ScrollToTop';
 
+
+function waitForImages() {
+  const imgs = Array.from(document.images).filter(img => img.loading !== 'lazy');
+  return Promise.all(
+    imgs.map(img =>
+      img.complete
+        ? Promise.resolve()
+        : new Promise(res => {
+            img.addEventListener('load', res, { once: true });
+            img.addEventListener('error', res, { once: true });
+          })
+    )
+  );
+}
 
 function App() {
-  let Router = useRoutes(routes);
-  const [Loading, setLoading] = useState(true)
-
+  const Router = useRoutes(routes);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
+    let cancelled = false;
 
-    if (document.readyState === "complete") {
-      setLoading(false);
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
+    const minTime = new Promise(res => setTimeout(res, 1200));
+    const maxTime = new Promise(res => setTimeout(res, 10000));
+
+    const ready = new Promise(res => requestAnimationFrame(() => res()))
+      .then(() => Promise.all([document.fonts.ready, waitForImages()]));
+
+    Promise.race([Promise.all([ready, minTime]), maxTime]).then(() => {
+      if (!cancelled) setLoading(false);
+    });
+
+    return () => { cancelled = true; };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = loading ? 'hidden' : '';
+  }, [loading]);
+
+  useScrollReveal(!loading)
 
   return (
     <>
-      {Loading ? (
-        <div className='flex justify-center mt-32'>
-          <div>
-            <div className='loader'></div>
-            <div className='text-center mt-5'>
-              Loading ...
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div>
-          <div className='relative' style={{animation: "openApp 1s" ,zIndex: "100"}}>
-            <Navbar></Navbar>
-          </div>
-          <div className='flex justify-end relative' style={{animation: "openApp 2s"}}>
-            <div id='display-page' className='w-[100%] display-page transition-all'>
-              {Router}
-            </div>
-            <Sidebar></Sidebar>
-          </div>
-        </div>
-      )}
-
+      <ToastHost />
+      <Page_loading done={!loading} />
+      <Navbar />
+      <ScrollToTop />
+      <div className='base-layout'>{Router}</div>
     </>
   );
 }

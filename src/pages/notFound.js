@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function NotFound() {
+    let [animate ,Setanimate] = useState(false)
+    setTimeout(() => {
+        Setanimate(true)
+    }, 1000);
     return (
         <div className='flex justify-center mt-20 border-b border-t border-[var(--border-color)]'>
             <div className='w-[85%] pb-[-1px] flex-wrap border-[var(--border-color)]'>
 
                 <div className='w-[100%] mt-[-1px] justify-center flex p-20 pb-24 border border-[var(--border-color)]'>
                     <i className='fixed fa fa-sitemap fa-10x text-[var(--border-color)]'></i>
-                    <i style={{ animation: "bounce 500ms" }} className='fa fa-close fa-5x ml-32 z-50 pr-10 mt-5'></i>
+                    <i style={ animate == true ? {animation: "bounce 500ms" } : null} className='fa fa-close fa-5x ml-32 z-50 pr-10 mt-5'></i>
                 </div>
 
                 <div className='p-5 border mt-[-1px] border-[var(--border-color)]'>
