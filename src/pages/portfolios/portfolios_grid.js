@@ -8,30 +8,35 @@ import { toast } from '../../utils/toast';
 import { useEffect } from 'react';
 import Portfolio_card from '../../components/portfolio/portfolio_card';
 import Portfolio_skeleton from '../../components/portfolio/skeleton/portfolio_skeleton';
+import Portfolio_grid_landing from './portfolio_grid_landing';
 
 export default function Portfolios_grid() {
-
     let [sw ,setSwitch] = useState('web') 
-        const { data ,loading ,error } = usePortfolios('')
-        useEffect(() => {
-            if (error) toast.networkError(error)
-        }, [error])
+
+    const { data ,loading ,error } = usePortfolios('')
+    useEffect(() => {
+        if (error) toast.networkError(error)
+    }, [error])
+
+    const webPorts = data.filter((item) => item.category.title === 'web')
+    const winPorts = data.filter((item) => item.category.title === 'win')
+    let visiblePorts = sw === 'web' ? webPorts : winPorts
+
 
   return (
     <div data-animate='right' className='centerbox animate-on-scroll w-[100%] mt-32'>
-        <div className='w-[80%] container'>
-            <div className='w-[100%] section-titlebar relative'>
-                <div className='flex gap-1'>
-                    <PiMonitorFill size='1em' className='icon text-[60px] max-[600px]:text-[40px]' />                    
-                    <div className=''>
-                        <div className='flex gap-1'><p className='text-neutral-400'>نمونه کار ها</p><div className='text-neutral-700'>/</div></div>
-                        <p className='font-secondary titlebar-eng text-3xl'>PORTFOLIOS</p>
-                    </div>
-                </div>
-                <div className='absolute left-0 bottom-0'>
-                    <div className='switcher'>
-                        <button className={`option ${sw === 'web' ? 'option-active' : ''}`} onClick={() => setSwitch('web')}>وب اپلیکیشن</button>
-                        <button className={`option ${sw === 'win' ? 'option-active' : ''}`} onClick={() => setSwitch('win')}>ویندوز اپ</button>
+        <div className='w-[80%] container portfolio-grid-page'>
+            <div className='w-[100%] centerbox'>
+
+                <div className='items-start w-[100%]'>
+                    <Portfolio_grid_landing></Portfolio_grid_landing>
+                    <div className='centerbox mt-2 w-[100%]'>
+                        <div className='switch-box'>
+                            <div className='switcher text-nowrap'>
+                                <button className={`option ${sw === 'web' ? 'option-active' : ''}`} onClick={() => setSwitch('web')}>وب اپلیکیشن</button>
+                                <button className={`option ${sw === 'win' ? 'option-active' : ''}`} onClick={() => setSwitch('win')}>ویندوز اپ</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,10 +45,13 @@ export default function Portfolios_grid() {
                         <Portfolio_skeleton></Portfolio_skeleton>
                         <Portfolio_skeleton></Portfolio_skeleton>
                     </div>
+                ) : visiblePorts.length === 0 ? (
+                    <p className='mt-32 text-center text-lg text-neutral-600' style={{animation: 'load1 300ms'}}>هنوز نمونه کاری آپلود نشده</p>
                 ) : (
-                    <div className='flex gap-2 h-[400px] mt-4 portfolio-selected'>
-                        {data.map(item => (
+                    <div className='flex gap-2 mt-4 portfolio-grid mb-20' style={{animation: 'load1 300ms'}}>
+                        {visiblePorts.map(item => (
                             <Portfolio_card 
+                            max_length={true}
                             id={item.id}
                             key={item.id} 
                             title={item.title} 

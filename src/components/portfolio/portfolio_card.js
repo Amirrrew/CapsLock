@@ -12,9 +12,9 @@ let GithubRepo = ({url}) => {
     )
 }
 
-export default function Portfolio_card({ id, title, title_fa, image, repo }) {
+export default function Portfolio_card({ id, title, title_fa, image, repo ,max_length }) {
   return (
-    <div className='portfolio-card' style={{ backgroundImage: `url(${image})` }}>
+    <div className='portfolio-card' style={{ backgroundImage: `url(${image})` ,maxWidth:`${!max_length ? '100%' : '600px'}` }}>
         <div className='github-wrap'>
             {repo ? <GithubRepo url={repo} /> : null}
         </div>

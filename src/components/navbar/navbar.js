@@ -40,9 +40,9 @@ export default function Navbar() {
             </Link>
 
             <ul className='flex gap-5 w-[100%] navbar-options-row mt-2 text-nowrap justify'>
-                <Link to={'/s'}><li><p>مهارت ها</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
+                <Link to={'/skills'}><li><p>مهارت ها</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
                 <Link to={'/portfolios'}><li><p>نمونه کارها</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
-                <Link><li><p>درباره‌من</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
+                <Link to={'/skills'}><li><p>درباره‌من</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
                 <Link><li><p>ارتباط</p><i className='fa fa-angle-left navbar-option-arrow mt-1.5'></i></li></Link>
             </ul>
 
@@ -58,18 +58,17 @@ export default function Navbar() {
                 <i className='fa fa-navicon'></i>
                 <p className='tooltip'>منو</p>
             </button>
-
-            <button className={`btn-closenavbar tooltip-parent ${MenuOpen ? 'btn-closenavbar--visible' : ''}`} onClick={() => SetMenuOpen(false)}>
-                <i className='fa fa-close'></i>
-                <p className='tooltip left-1'>بستن منو</p>
-            </button>
         </div>
         <div id='side-menu' className={`off-canvas-menu ${MenuOpen ? 'off-canvas-menu--open' : ''}`}>
+            <div className='flex justify-end'>
+                <i onClick={()=> SetMenuOpen(false)} className='fa fa-close text-2xl cursor-pointer'></i>
+            </div>
             <ul className='w-[100%] off-canvas-menu-option'>
-                <Link onClick={() => SetMenuOpen(false)}><li><p>مهارت ها</p><i className='fa fa-angle-left navbar-option-arrow mt-1'></i></li></Link>
-                <Link onClick={() => SetMenuOpen(false)} to={'/portfolios'}><li><p>نمونه کارها</p><i className='fa fa-angle-left navbar-option-arrow mt-1'></i></li></Link>
-                <Link onClick={() => SetMenuOpen(false)}><li><p>درباره‌من</p><i className='fa fa-angle-left navbar-option-arrow mt-1'></i></li></Link>
-                <Link onClick={() => SetMenuOpen(false)}><li><p>ارتباط</p><i className='fa fa-angle-left navbar-option-arrow mt-1'></i></li></Link>
+                <Link to={'/'} onClick={() => SetMenuOpen(false)}><li><p>خانه</p><p className='font-secondary text-[10px] text-neutral-700 mt-2'>01 - HOME</p></li></Link>
+                <Link to={'/skills'} onClick={() => SetMenuOpen(false)}><li><p>مهارت ها</p><p className='font-secondary text-[10px] text-neutral-700 mt-2'>02 - SKILLS</p></li></Link>
+                <Link to={'/portfolios'} onClick={() => SetMenuOpen(false)}><li><p>نمونه کارها</p><p className='font-secondary text-[10px] text-neutral-700 mt-2'>03 - PORTFOLIOS</p></li></Link>
+                <Link onClick={() => SetMenuOpen(false)}><li><p>درباره‌من</p><p className='font-secondary text-[10px] text-neutral-700 mt-2'>04 - ABOUTME</p></li></Link>
+                <Link onClick={() => SetMenuOpen(false)}><li><p>ارتباط</p><p className='font-secondary text-[10px] text-neutral-700 mt-2'>05 - CONTACT</p></li></Link>
             </ul>
         </div>
     </div>

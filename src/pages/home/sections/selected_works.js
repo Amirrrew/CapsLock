@@ -37,7 +37,8 @@ export default function Selected_works() {
                 ) : (
                     <div className='flex gap-2 h-[400px] mt-4 portfolio-selected'>
                         {data.map(item => (
-                            <Portfolio_card 
+                            <Portfolio_card
+                            max_length={false}
                             id={item.id}
                             key={item.id} 
                             title={item.title} 
